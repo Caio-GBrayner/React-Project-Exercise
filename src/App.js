@@ -3,32 +3,32 @@ import './App.css';
 function Header(props) {
   return(
     <haeder>
-      <h1>Paro's Recipes</h1>
+      <h1>{props.name}</h1>
     </haeder>
   )
 }
 
-function Main() {
+function Main(props) {
   return(
     <main>
-      <p>Best recip's for quick and tasty food.</p>
+      <p>Best recip's for quick and {props.adjective} tasty food.</p>
     </main>
   )
 }
 
-function Footer() {
+function Footer(props) {
   return(
     <footer>
-      <p>Copyright &copy; 2025</p>
+      <p>Copyright &copy; {props.year}</p>
     </footer>
   )
 }
 function App() {
   return (
     <div className="App">
-      <Header></Header>
-       <Main></Main>
-       <Footer></Footer>
+      <Header name="My Recipes"></Header>
+       <Main adjective="delicious"></Main>
+       <Footer year={new Date().getFullYear()}></Footer>
     </div>
   );
 }
