@@ -1,4 +1,5 @@
 import './App.css';
+import img_recipe from "./images/pizza_img.jpg"
 
 function Header(props) {
   return(
@@ -12,6 +13,7 @@ function Main(props) {
   return(
     <main>
       <p>Best recip's for quick and {props.adjective} tasty food.</p>
+      <img src={img_recipe} height={200} alt='pizza'/>
       <ul>
         {props.recipes.map((recipe) => (<li key={recipe.id}> {recipe.title} </li>))}
       </ul>
