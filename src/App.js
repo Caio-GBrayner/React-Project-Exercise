@@ -3,7 +3,7 @@ import img_recipe from "./images/pizza_img.jpg"
 
 function Header(props) {
   return(
-    <header>
+    <header className='header-styles'>
       <h1>{props.name}</h1>
     </header>
   )
