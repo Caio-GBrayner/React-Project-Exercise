@@ -3,11 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 
-function AppTwo() {
-  return (
-    <h1>This is the second app</h1>
-  )
-}
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root')
@@ -15,8 +11,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.Fragment>
-    <AppTwo/>
-    <App/>
+    <App authorized={false}/>
   </React.Fragment>,
   
 );

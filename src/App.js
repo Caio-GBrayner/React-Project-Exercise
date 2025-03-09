@@ -1,57 +1,24 @@
 import './App.css';
-import img_recipe from "./images/pizza_img.jpg"
 
-function Header(props) {
+function SecretComponent() {
   return(
-    <header className='header-styles'>
-      <h1>{props.name}</h1>
-    </header>
+    <h1>Information for Athorized Users Only</h1>
   )
 }
 
-function Main(props) {
+function RegularComponent() {
   return(
-    <main>
-      <p>Best recip's for quick and {props.adjective} tasty food.</p>
-      <img src={img_recipe} height={200} alt='pizza'/>
-      <ul>
-        {props.recipes.map((recipe) => (<li key={recipe.id}> {recipe.title} </li>))}
-      </ul>
-    </main>
+    <h1>Information which everyone can see.</h1>
   )
 }
 
-function Footer(props) {
+function App(props) {
+  
   return(
-    <footer>
-      <p>Copyright &copy; {props.year}</p>
-    </footer>
+  <>
+    {props.authorized ? <SecretComponent/> : <RegularComponent/>}
+  </>
   )
-}
-
-const recipes =[
-  "Breakfast Recipe's",
-  "Braunch Recipes's",
-  "Launch Recipe's",
-  "Dinner Recipe's",
-]
-
-const recipeObjects = recipes.map((recipe, recipe_id) => (
-  {
-    id: recipe_id,
-    title: recipe
-  }
-));
-
-
-function App() {
-  return (
-    <div className="App">
-      <Header name="My Recipes"></Header>
-       <Main adjective="delicious" recipes ={recipeObjects}></Main>
-       <Footer year={new Date().getFullYear()}></Footer>
-    </div>
-  );
 }
 
 export default App;
