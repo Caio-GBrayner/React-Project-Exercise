@@ -1,22 +1,17 @@
 import './App.css';
+import React, {useState} from 'react';
 
-function SecretComponent() {
-  return(
-    <h1>Information for Athorized Users Only</h1>
-  )
-}
+function App() {
 
-function RegularComponent() {
-  return(
-    <h1>Information which everyone can see.</h1>
-  )
-}
-
-function App(props) {
+  const [first, changeFirst] = useState("In a good mood!");
+  console.log(first);
   
   return(
   <>
-    {props.authorized ? <SecretComponent/> : <RegularComponent/>}
+    <h1>To day i am{first}</h1>
+    <button onClick={() => {changeFirst("In a Happy mood")}}>Change Mood</button>
+    <button onClick={() => {changeFirst("In a Sad mood")}}>Change Mood to Sad</button>
+    <button onClick={() => {changeFirst("In a Frustrated mood")}}>Change Mood to Frustrated</button>
   </>
   )
 }
