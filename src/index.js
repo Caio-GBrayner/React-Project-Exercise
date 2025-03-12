@@ -3,15 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 
-const [importnatItem, second, third] = [
-  "Book",
-  "Calculator",
-  "Pen",
-  "Ruler",
-]
-
-console.log(importnatItem, second, third);
-
 
 const root = ReactDOM.createRoot(
   document.getElementById('root')
@@ -19,7 +10,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.Fragment>
-    <App authorized={false}/>
+    <App login="Caio-GBrayner"/>
   </React.Fragment>,
   
 );
